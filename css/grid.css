@@ -2,8 +2,26 @@
    Grid Layout
 ======================================== */
 .grid {
-  max-width: 800px;
+  max-width: 1000px;
   display: grid;
-  grid-template-columns: 200px auto 200px;
+
+  /* grid-template-columns allow you to
+  designate the width and number of columns in the grid */
+  grid-template-columns: 1fr 1fr 1fr;/* The fraction unit(fr) == flex-grow */
+  grid-auto-columns: 1fr;
+
+  /* grid-template-rows allow you to designate the height of the row(s)  */
   grid-template-rows: 100px 200px;
+  /* All undefined rows will be Implicitly with a height of 200px */
+  grid-auto-rows: 200px;
+
+  /* Short hand of grid-(row/column)-gap,
+  the first value effects gaps between rows,
+  and the second between columns.
+  In this example, both rows and columns have a 15px gap
+  between all connecting corners. */
+  grid-gap: 15px;
+
+/*  */
+grid-auto-flow: column;
 }
